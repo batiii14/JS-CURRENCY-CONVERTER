@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      TUTORIAL
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>LAB 1 PRACTICE</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="modernizr.custom.05819.js"></script>
+   <script>
+   function convertl ()
+   {
+
+    if(isNaN((document.getElementById("amnt").value))){
+      alert("Entered value is not a valid number");
+      return;
+    }
+
+    addEventListener('submit',function(event){
+      event.preventDefault();
+    })
+    var amnt= parseFloat (document.getElementById("amnt").value);
+    var inmonth=document.getElementById("inmonth").value;
+    var outmonth=document.getElementById("outmonth").value;
+
+    
+    if(inmonth=="01"){
+      if(outmonth=="01"){
+        new_val=amnt/17.48;
+        document.getElementById("display").innerHTML=amnt +" Turkish Lira = "+ new_val+" Euro";
+
+        alert(new_val);
+      }else if(outmonth=="02"){
+        new_val=amnt/20.29;
+        document.getElementById("display").innerHTML=amnt +" Turkish Lira = "+ new_val+" Pound";
+        alert(new_val);
+      }
+      else if(outmonth=="03"){
+        new_val=amnt/16.46;
+        document.getElementById("display").innerHTML=amnt +" Turkish Lira = "+ new_val+" Dollar";
+        alert(new_val);
+      }
+      else if(outmonth=="04"){
+        new_val=amnt*1;
+        document.getElementById("display").innerHTML=amnt +" Turkish Lira = "+ new_val+" Turkish Lira";
+        alert(new_val);
+        
+      }
+    }
+    
+    
+    else if(inmonth=="02"){
+      if(outmonth=="01"){
+        new_val=amnt*0.96;
+        document.getElementById("display").innerHTML=amnt +" Dollar = "+ new_val+" Euro";
+
+        alert(new_val);
+      }else if(outmonth=="02"){
+        new_val=amnt*0.83;
+        document.getElementById("display").innerHTML=amnt +" Dollar = "+ new_val+" Pound";
+        alert(new_val);
+      }
+      else if(outmonth=="03"){
+        new_val=amnt*1;
+        document.getElementById("display").innerHTML=amnt +" Dollar = "+ new_val+" Dollar";
+        alert(new_val);
+      }
+      else if(outmonth=="04"){
+        new_val=amnt*16.46;
+        document.getElementById("display").innerHTML=amnt +" Dollar = "+ new_val+" Turkish Lira";
+        alert(new_val);
+        
+      }
+    }
+  
+    else if(inmonth=="03"){
+      if(outmonth=="01"){
+        new_val=amnt*1.16;
+        document.getElementById("display").innerHTML=amnt +" Pound = "+ new_val+" Euro";
+
+        alert(new_val);
+      }else if(outmonth=="02"){
+        new_val=amnt*1;
+        document.getElementById("display").innerHTML=amnt +" Pound = "+ new_val+" Pound";
+        alert(new_val);
+      }
+      else if(outmonth=="03"){
+        new_val=amnt*1.21;
+        document.getElementById("display").innerHTML=amnt +" Pound = "+ new_val+" Dollar";
+        alert(new_val);
+      }
+      else if(outmonth=="04"){
+        new_val=amnt*20.29;
+        document.getElementById("display").innerHTML=amnt +" Pound = "+ new_val+" Turkish Lira";
+        alert(new_val);
+        
+      }
+
+    }
+
+
+    else if(inmonth=="04"){
+      if(outmonth=="01"){
+        new_val=amnt*1;
+        document.getElementById("display").innerHTML=amnt +" Euro = "+ new_val+" Euro";
+
+        alert(new_val);
+      }else if(outmonth=="02"){
+        new_val=amnt*0.86;
+        document.getElementById("display").innerHTML=amnt +" Euro = "+ new_val+" Pound";
+        alert(new_val);
+      }
+      else if(outmonth=="03"){
+        new_val=amnt*1.04;
+        document.getElementById("display").innerHTML=amnt +" Euro = "+ new_val+" Dollar";
+        alert(new_val);
+      }
+      else if(outmonth=="04"){
+        new_val=amnt*17.48;
+        document.getElementById("display").innerHTML=amnt +" Euro = "+ new_val+" Turkish Lira";
+        alert(new_val);
+        
+      }
+
+    }
+  
+  
+  
+  
+  }
+    
+
+
+    
+   
+   
+  
+   document.getElementById("display").innerHTML=new_val;
+   
+   </script>
+   
+   
+</head>
+
+<body>
+   <header>
+      <h1>
+         CURRENCY CONVERTER
+      </h1>
+   </header>
+
+   <article>
+      <h2>Convert Any Currency of Your Choice</h2>
+      <form>
+        <fieldset id="contactinfo">
+          <!--<legend><span>Contact Information</span></legend>-->
+          <label for="nameinput">
+            Amount
+            <input type="text" id="amnt" name="name" required/>
+          </label>
+          
+        </fieldset>
+        <fieldset id="reserveinfo">
+          <legend><span>Simple Currency Converter</span></legend>
+          <fieldset id="checkin">
+            <legend>From:</legend>
+            <select id="inmonth" name="inmonth">
+              <option value="01" id="fromeur" >Turkish Lira</option>
+              <option value="02">Dollar</option>
+              <option value="03">Pounds</option>
+			  <option value="04">Euro</option>
+             
+            </select>
+            
+          </fieldset>
+          <fieldset id="checkout">
+            <legend>To:</legend>
+            <select id="outmonth" name="outmonth">
+              <option value="01" >Euro</option>
+              <option value="02">Pounds</option>
+              <option value="03">Dollar</option>
+              <option value="04">Turkish Lira</option>
+            </select>
+           
+          </fieldset>
+        </fieldset>
+        <fieldset id="submitbutton">
+          <input type="submit" value="Convert" onclick="convertl();" />
+        </fieldset>
+     </form>
+	
+   </article>
+   <div id="display"></div>
+</body>
+</html>
+   
